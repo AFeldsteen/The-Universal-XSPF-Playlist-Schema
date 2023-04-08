@@ -1,0 +1,110 @@
+<schema>
+<xs:sequence>
+<xs:element name="name" type="xs:string"/>
+
+<xs:all> 
+<xs:complexType>
+<xs:element name="playlist">
+<xs:complexType mixed="true">
+<xs:element name="creator" minOccurs="0" maxOccurs="1"/>
+<xs:complexType mixed="true">
+<xs:element name="annotation" minOccurs="0" maxOccurs="1"/>
+ <xs:complexType mixed="true">
+<xs:element name="info" type="xs:anyURL" minOccurs="0" maxOccurs="1"/>
+<xs:element name="identifier" minOccurs="0" maxOccurs="1"/>
+<xs:complexType mixed="true"> 
+<xs:choice>
+<xs:element name="image" type="anyURI" minOccurs="0" maxOccurs="1"/>
+<xs:element name="image_element" type="anyURI"/>
+</xs:choice>
+<xs:element name="creation date" type="xs:dateTime" minOccurs="0" maxOccurs="1"/>
+<xs:element name="license" type="xs:allURL" minOccurs="0" maxOccurs="1"/>
+<xs:element name="link" type="xs:allURI" minOccurs="0" maxOccurs="1"/>   
+</xs:all>
+
+<xs:sequence>
+<xs:element name="track" minOccurs="1" maxOccurs="unbounded"/>
+<xs:restriction base="xs:integer">
+<xs:minInclusive value="1"/>
+<xs:maxInclusive value="unbounded"/>
+</xs:restriction>
+<xs:element name="location" type="AnyURI" minOccurs="1" maxOccurs="unbounded"/>
+<xs:elemen name="attribution" type="anyURI" minOccurs="0" maxOccurs="1"/>   
+<xs:element name="duration" type="xs:positIveInteger" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+
+<xs:all> 
+<xs:sequence>
+<xs:element metadata="cruxy_for_second_life"" id="cl">
+<xs:element name="cl" type="popsitiveInteger" minOccurs="0" maxOccurs="unbounded"/>
+<xs:simpleType>
+    <xs:restriction base="xs:integer">
+      <xs:minInclusive value="0"/>
+	     <xs:maxInclusive value="unbounded"/>
+    </xs:restriction>
+  </xs:simpleType>
+<xs:element name="cl:extension_application" type="anyURI" minOccurs="0" maxOccurs="unbounded"/>
+<xs:element name="cl:rel type="anyURI" minOccurs="0" maxOccurs="unbounded"/>
+ <xs:simpleType>
+      <xs:element name="cl:clip" "type="positIveInteger">
+<xs:pattern value="(\+|-)[0-9]{4}"/> 
+ </xs:simpleType>
+</xs:sequence>
+
+<xs:sequence metadata="drupal" id="drupal">
+<xs:element name="drupal" type="popsitiveInteger" minOccurs="0" maxOccurs="unbounded"/>
+    <xs:restriction base="xs:integer">
+      <xs:minInclusive value="0"/>
+	     <xs:maxInclusive value="unbounded"/>
+    </xs:restriction>
+<xs:element name="drupal:extension_application" type="anyURI" minOccurs="0" maxOccurs="unbounded"/>
+<xs:element name="drupal:rel" type="anyURI" minOccurs="0" maxOccurs="unbounded"/>
+
+      <xs:element name="cl:clip" "type="positIveInteger">
+<xs:pattern value="(\+|-)[0-9]{4}"/> 
+
+</xs:metadata="drupal">
+
+<xs:metadata="vlc" id="vlc">
+<xs:element name="vlc" type="popsitiveInteger" minOccurs="0" maxOccurs="unbounded"/>
+    <xs:restriction base="xs:integer">
+      <xs:minInclusive value="0"/>
+	     <xs:maxInclusive value="unbounded"/>
+    </xs:restriction>
+<xs:attribute name="lang" type="xs:string" fixed="EN"/>
+<xs:element name="vlc:extension_application" type="mixed" fixed="http://www.videolan.org.vlc/playlist/"/> THIS IS A FIXED TYPE
+<xs:element name="vlc:option"  type="mixed" fixed="file-caching=1000"/> 
+      <xs:element name="cl:clip" "type="positIveInteger">
+<xs:pattern value="(\+|-)[0-9]{4}"/> 
+</xs:metadata="vlc">
+
+<xs:element name="aud:id" type="integer"/>
+
+<xs:metadata="audacious" id="aud">
+<xs:element name="aud" type="popsitiveInteger" minOccurs="0" maxOccurs="unbounded"/>
+
+    <xs:restriction base="xs:integer">
+      <xs:minInclusive value="0"/>
+	     <xs:maxInclusive value="unbounded"/>
+    </xs:restriction>
+<xs:element name="aud:extension_application" type="mixed" fixed="http://www.videolan.org.vlc/playlist/"/> THIS IS A FIXED TYPE
+     <xs:element name="cl:clip" "type="positIveInteger">
+<xs:pattern value="(\+|-)[0-9]{4}"/> 
+</xs:metadata="vlc">
+</xs:sequence "metadata"="aud">
+
+
+
+<xs:element name="tracklist">
+<xs:element name="drupal:rel" type="anyURI" minOccurs="0" maxOccurs="unbounded"/>
+    <xs:choice>
+	</xs:sequence>
+     
+
+</xs:element name="tracklist"> 
+
+</xs:element name="track">
+</xs:element name="playlist">
+</xs:element type="complexType">
+</xs:schma> 
+</schema> 
