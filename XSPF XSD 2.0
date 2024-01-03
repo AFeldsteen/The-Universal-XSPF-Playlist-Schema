@@ -1,0 +1,69 @@
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+    xmlns:xspf="http://xspf.org/ns/0/"
+    targetNamespace="http://xspf.org/ns/0/"
+    elementFormDefault="qualified">
+
+  <!-- Define complex types -->
+  <xs:complexType name="metaType">
+    <xs:sequence>
+      <xs:element name="title" type="xs:string" minOccurs="0" />
+      <xs:element name="creator" type="xs:string" minOccurs="0" />
+      <xs:element name="annotation" type="xs:string" minOccurs="0" />
+      <xs:element name="info" type="xs:anyURI" minOccurs="0" />
+      <xs:element name="date" type="xs:date" minOccurs="0" />
+      <xs:element name="location" type="xs:anyURI" minOccurs="0" />
+      <xs:element name="identifier" type="xs:anyURI" minOccurs="0" />
+      <xs:element name="image" type="xs:anyURI" minOccurs="0" />
+      <xs:element name="license" type="xs:anyURI" minOccurs="0" />
+      <xs:element name="attribution" type="xs:anyURI" minOccurs="0" />
+      <xs:element name="link" type="xs:boolean" minOccurs="0" />
+      <xs:element name="meta" type="xspf:metaType" minOccurs="0" maxOccurs="unbounded" />
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="trackType">
+    <xs:sequence>
+      <xs:element name="location" type="xs:anyURI" />
+      <xs:element name="identifier" type="xs:anyURI" minOccurs="0" />
+      <xs:element name="title" type="xs:string" minOccurs="0" />
+      <xs:element name="creator" type="xs:string" minOccurs="0" />
+      <xs:element name="album" type="xs:string" minOccurs="0" />
+      <xs:element name="annotation" type="xs:string" minOccurs="0" />
+      <xs:element name="info" type="xs:anyURI" minOccurs="0" />
+      <xs:element name="image" type="xs:anyURI" minOccurs="0" />
+      <xs:element name="albumArtist" type="xs:string" minOccurs="0" />
+      <xs:element name="trackNum" type="xs:positiveInteger" minOccurs="0" />
+      <xs:element name="duration" type="xs:duration" minOccurs="0" />
+      <xs:element name="link" type="xs:boolean" minOccurs="0" />
+      <xs:element name="meta" type="xspf:metaType" minOccurs="0" maxOccurs="unbounded" />
+    </xs:sequence>
+  </xs:complexType>
+
+  <!-- Define the root element -->
+  <xs:element name="playlist">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="title" type="xs:string" minOccurs="0" />
+        <xs:element name="creator" type="xs:string" minOccurs="0" />
+        <xs:element name="annotation" type="xs:string" minOccurs="0" />
+        <xs:element name="info" type="xs:anyURI" minOccurs="0" />
+        <xs:element name="location" type="xs:anyURI" minOccurs="0" />
+        <xs:element name="identifier" type="xs:anyURI" minOccurs="0" />
+        <xs:element name="image" type="xs:anyURI" minOccurs="0" />
+        <xs:element name="attribution" type="xs:anyURI" minOccurs="0" />
+        <xs:element name="date" type="xs:date" minOccurs="0" />
+        <xs:element name="license" type="xs:anyURI" minOccurs="0" />
+        <xs:element name="link" type="xs:boolean" minOccurs="0" />
+        <xs:element name="meta" type="xspf:metaType" minOccurs="0" maxOccurs="unbounded" />
+        <xs:element name="trackList">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="track" type="xspf:trackType" minOccurs="0" maxOccurs="unbounded" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+
+</xs:schema>
